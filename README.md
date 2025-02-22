@@ -1,2 +1,2 @@
 # Java-Programs
-"Explore a collection of Java solutions for LeetCode, CodeChef, GeeksforGeeks, and more! This repository features well-organized code for competitive programming, algorithm challenges, and interview prep. Perfect for learners and coders looking to sharpen their Java skills and tackle coding problems efficiently."
+Examine a variety of Java solutions for GeeksforGeeks, LeetCode, CodeChef, and other platforms! Code for competitive programming, algorithm challenges, and interview preparation is organized in this repository. Ideal for students and programmers wishing to improve their Java knowledge and effectively solve coding challenges.
