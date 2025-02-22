@@ -1,92 +1,53 @@
-# Leetcode Easy Assignment 1
+# Leetcode Easy Assignments
 
-Given an array `nums` and an integer `target`, return indices of two numbers summing to `target`. One solution exists, and elements can't be reused.
+## Assignment 1: Two Sum
 
-## Examples
-**Input:** nums = [2,7,11,15], target = 9  
-**Output:** [0,1]
+### 1. Problem Statement
+Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
-**Input:** nums = [3,2,4], target = 6  
-**Output:** [1,2]
+- Each input has exactly **one solution**.
+- The same element cannot be used twice.
+- Return the answer in **any order**.
 
-**Input:** nums = [3,3], target = 6  
-**Output:** [0,1]
+### 2. Examples
 
-## Constraints
-- 2 ≤ nums.length ≤ 10⁴
-- -10⁹ ≤ nums[i], target ≤ 10⁹
-
-## Solution
-
-### Brute Force
-```java
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums.length; j++) {
-                if (i != j && nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
-            }
-        }
-        return new int[]{};
-    }
-}
+#### Example 1:
+**Input:**
+```plaintext
+nums = [2,7,11,15], target = 9
 ```
-**Time:** O(n²), **Space:** O(1)
-
-### Optimized (HashMap)
-```java
-import java.util.HashMap;
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (map.containsKey(complement)) {
-                return new int[]{map.get(complement), i};
-            }
-            map.put(nums[i], i);
-        }
-        return new int[]{};
-    }
-}
+**Output:**
+```plaintext
+[0,1]
 ```
-**Time:** O(n), **Space:** O(n)
+**Explanation:** nums[0] + nums[1] == 9, so we return [0, 1].
 
----
-
-# Leetcode Easy Assignment 2
-
-## Palindrome Number
-Given an integer `x`, return `true` if `x` is a palindrome.
-
-### Examples
-**Input:** x = 121  
-**Output:** true
-
-**Input:** x = -121  
-**Output:** false
-
-**Input:** x = 10  
-**Output:** false
-
-## Constraints
-- -2³¹ ≤ x ≤ 2³¹ - 1
-
-## Solution
-```java
-class Solution {
-    public boolean isPalindrome(int x) {
-        if (x < 0) return false;
-        int original = x, reversed = 0;
-        while (x != 0) {
-            reversed = reversed * 10 + x % 10;
-            x /= 10;
-        }
-        return reversed == original;
-    }
-}
+#### Example 2:
+**Input:**
+```plaintext
+nums = [3,2,4], target = 6
 ```
-**Time:** O(n), **Space:** O(1)
+**Output:**
+```plaintext
+[1,2]
+```
+
+#### Example 3:
+**Input:**
+```plaintext
+nums = [3,3], target = 6
+```
+**Output:**
+```plaintext
+[0,1]
+```
+
+### 3. Constraints
+- `2 <= nums.length <= 10^4`
+- `-10^9 <= nums[i] <= 10^9`
+- `-10^9 <= target <= 10^9`
+- Only **one valid answer exists**.
+
+### 4. Follow-up
+Can you solve it in less than **O(n²)** time complexity?
 
